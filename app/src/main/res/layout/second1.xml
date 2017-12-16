@@ -9,16 +9,9 @@
     android:orientation="vertical"
     tools:context="com.example.liang.android_utils.MainActivity">
 
-
-    <Button
-        android:text="图片工具演示"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"/>
-
-    <Button
-        android:text="动画工具演示"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button3"/>
+        android:src="@drawable/beijngpng"/>
 </LinearLayout>
