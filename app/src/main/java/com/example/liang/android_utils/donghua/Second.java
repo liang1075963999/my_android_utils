@@ -1,4 +1,5 @@
 package com.example.liang.android_utils.donghua;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,7 +17,8 @@ import com.example.myandroidutilslibrary.CircularAnimUtil;
  * Created by liang on 2017/12/16.
  */
 
-public class Second extends AppCompatActivity {ProgressBar mProgressBar, mProgressBar2;
+public class Second extends AppCompatActivity {
+    ProgressBar mProgressBar, mProgressBar2;
     Button mChangeBtn, mChangeBtn2, mActivityImageBtn, mActivityColorBtn;
     ImageView mLogoBtnIv;
     LinearLayout mContentLayout;
@@ -26,7 +28,6 @@ public class Second extends AppCompatActivity {ProgressBar mProgressBar, mProgre
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second);
-
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         mChangeBtn = (Button) findViewById(R.id.change_btn);
         mProgressBar2 = (ProgressBar) findViewById(R.id.progressBar2);
@@ -35,24 +36,32 @@ public class Second extends AppCompatActivity {ProgressBar mProgressBar, mProgre
         mActivityColorBtn = (Button) findViewById(R.id.activity_color_btn);
         mLogoBtnIv = (ImageView) findViewById(R.id.logoBtn_iv);
         mContentLayout = (LinearLayout) findViewById(R.id.content_layout);
-
         mChangeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mProgressBar.setVisibility(View.VISIBLE);
                 // 收缩按钮
-                CircularAnimUtil.hide(mChangeBtn).go();
+                CircularAnimUtil.hide(mChangeBtn).go(new CircularAnimUtil.OnAnimationEndListener() {
+                    @Override
+                    public void onAnimationEnd() {
+                        mProgressBar.setVisibility(View.VISIBLE);
+                    }
+                });
             }
         });
 
         mProgressBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mProgressBar.setVisibility(View.GONE);
                 // 伸展按钮
-                CircularAnimUtil.show(mChangeBtn).go();
+                CircularAnimUtil.show(mChangeBtn).go(new CircularAnimUtil.OnAnimationEndListener() {
+                    @Override
+                    public void onAnimationEnd() {
+                        mProgressBar.setVisibility(View.GONE);
+                    }
+                });
             }
         });
+
 
         mChangeBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +89,6 @@ public class Second extends AppCompatActivity {ProgressBar mProgressBar, mProgre
                         });
             }
         });
-
         mActivityImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
