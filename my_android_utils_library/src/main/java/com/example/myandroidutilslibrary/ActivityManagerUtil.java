@@ -6,10 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import java.util.Stack;
 
-/**
- * Created by Haoz on 2017/3/12 0012.
- */
-
 public class ActivityManagerUtil {
     private static Stack<AppCompatActivity> activityStack;
     private static ActivityManagerUtil instance;
