@@ -10,7 +10,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.view.View;
 import android.widget.Toast;
 
 import java.io.File;
@@ -71,7 +70,7 @@ public class SystemUtil {
      * @param url
      * @param bitmap
      */
-    public static Uri saveBitmapToFile(Application application, Context context, String url, Bitmap bitmap, View container, boolean isShare) {
+    public static Uri saveBitmapToFile(Application application, Context context, String url, Bitmap bitmap, boolean isShare) {
         String fileName = url.substring(url.lastIndexOf("/"), url.lastIndexOf(".")) + ".png";
         File fileDir = new File(application.getCacheDir().getAbsolutePath() + File.separator + "data");
         if (!fileDir.exists()) {
