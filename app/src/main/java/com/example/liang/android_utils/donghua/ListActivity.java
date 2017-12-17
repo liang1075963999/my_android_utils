@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.liang.android_utils.MainActivity;
 import com.example.liang.android_utils.R;
 import com.example.myandroidutilslibrary.CircularAnimUtil;
 
@@ -32,7 +31,6 @@ public class ListActivity extends AppCompatActivity {
             // 默认显示左上角返回按钮
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-
         initList();
     }
 
