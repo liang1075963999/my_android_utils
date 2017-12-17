@@ -31,15 +31,15 @@ public class SDCardUtils {
         return Environment.getExternalStorageState().equals(
                 Environment.MEDIA_MOUNTED);
     }
-//
-//    // 得到SD卡的 系统根路径
-//    public static String getSDPath() {
-//
-//        if (isMounted()) {
-//            return Environment.getExternalStorageDirectory().getAbsolutePath();
-//        }
-//        return null;
-//    }
+
+    // 得到SD卡的 系统根路径
+    public static String getSDPath() {
+
+        if (isMounted()) {
+            return Environment.getExternalStorageDirectory().getAbsolutePath();
+        }
+        return null;
+    }
 
     /**
      * 获取SD卡 系统根路径
@@ -93,49 +93,49 @@ public class SDCardUtils {
         return Formatter.formatFileSize(context, blockSize * (availableBlocks+totalBlocks));
     }
 
-//    /**
-//     * 获得机身内存总大小
-//     *
-//     * @return
-//     */
-//    public static String getRomTotalSize(Context comtext) {
-//        File path = Environment.getDataDirectory();
-//        StatFs stat = new StatFs(path.getPath());
-//        long blockSize = stat.getBlockSize();
-//        long totalBlocks = stat.getBlockCount();
-//        return Formatter.formatFileSize(comtext, blockSize * totalBlocks);
-//    }
-//
-//    /**
-//     * 获得机身可用内存
-//     *
-//     * @return
-//     */
-//    public static String getRomAvailableSize(Context comtext) {
-//        File path = Environment.getDataDirectory();
-//        StatFs stat = new StatFs(path.getPath());
-//        long blockSize = stat.getBlockSize();
-//        long availableBlocks = stat.getAvailableBlocks();
-//        return Formatter.formatFileSize(comtext, blockSize * availableBlocks);
-//    }
+    /**
+     * 获得机身内存总大小
+     *
+     * @return
+     */
+    public static String getRomTotalSize(Context comtext) {
+        File path = Environment.getDataDirectory();
+        StatFs stat = new StatFs(path.getPath());
+        long blockSize = stat.getBlockSize();
+        long totalBlocks = stat.getBlockCount();
+        return Formatter.formatFileSize(comtext, blockSize * totalBlocks);
+    }
 
-//    /**
-//     * 获取SD卡的剩余容量 单位byte
-//     *
-//     * @return
-//     */
-//    public static String getSDCardAllSize(Context context) {
-//        if (isMounted()) {
-//            StatFs stat = new StatFs(getSDCardPath());
-//            // 获取空闲的数据块的数量
-//            long availableBlocks = (long) stat.getAvailableBlocks() - 4;
-//            // 获取单个数据块的大小（byte）
-//            long freeBlocks = stat.getAvailableBlocks();
-////			return freeBlocks * availableBlocks;
-//            return Formatter.formatFileSize(context, freeBlocks * availableBlocks);
-//        }
-//        return "0";
-//    }
+    /**
+     * 获得机身可用内存
+     *
+     * @return
+     */
+    public static String getRomAvailableSize(Context comtext) {
+        File path = Environment.getDataDirectory();
+        StatFs stat = new StatFs(path.getPath());
+        long blockSize = stat.getBlockSize();
+        long availableBlocks = stat.getAvailableBlocks();
+        return Formatter.formatFileSize(comtext, blockSize * availableBlocks);
+    }
+
+    /**
+     * 获取SD卡的剩余容量 单位byte
+     *
+     * @return
+     */
+    public static String getSDCardAllSize(Context context) {
+        if (isMounted()) {
+            StatFs stat = new StatFs(getSDCardPath());
+            // 获取空闲的数据块的数量
+            long availableBlocks = (long) stat.getAvailableBlocks() - 4;
+            // 获取单个数据块的大小（byte）
+            long freeBlocks = stat.getAvailableBlocks();
+//			return freeBlocks * availableBlocks;
+            return Formatter.formatFileSize(context, freeBlocks * availableBlocks);
+        }
+        return "0";
+    }
 
     /**
      * 获取指定路径所在空间的剩余可用容量字节数，单位byte
@@ -157,8 +157,10 @@ public class SDCardUtils {
     }
 
 
-
-    // 获取SD卡的根目录  获取到的是 系统默认的存储位置 的卡的路径
+    /**
+     * 获取SD卡的根目录  获取到的是 系统默认的存储位置 的卡的路径
+     * @return
+     */
     public static String getSDCardBaseDir() {
 //         StatFs sf=new StatFs("/mnt/sdcard2");  外置卡
         if (isMounted()) {
@@ -167,8 +169,13 @@ public class SDCardUtils {
         return null;
     }
 
-
-    // 将文件保存到SD卡中
+    /**
+     * 将文件保存到SD卡中
+     * @param data
+     * @param path 看源码可知，会在path参数前面/storage/emulated/0
+     * @param fileName
+     * @return
+     */
     public static boolean saveFileIntoSDCard(byte[] data, String path,
                                              String fileName) {
 
@@ -205,7 +212,11 @@ public class SDCardUtils {
         return false;
     }
 
-    // 从SD卡中取出存储的文件
+    /**
+     * 从SD卡中取出存储的文件
+     * @param filePath
+     * @return
+     */
     public static byte[] getFileFromSDCard(String filePath) {
 
         if (isMounted()) {
@@ -222,7 +233,6 @@ public class SDCardUtils {
                         baos.write(buffer, 0, len);
                         baos.flush();
                     }
-
                     return baos.toByteArray();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -245,33 +255,33 @@ public class SDCardUtils {
     }
 
 
-//    /**
-//     * 根据路径获取内存状态
-//     * @param
-//     * @return
-//     */
-//    public static String getMemoryInfo(Context context)
-//    {
-//
-//        File path = Environment.getDataDirectory();
-//
-//        // 获得一个磁盘状态对象
-//
-//        StatFs stat = new StatFs(path.getPath());
-//
-//        long blockSize = stat.getBlockSize();   // 获得一个扇区的大小
-//
-//        long totalBlocks = stat.getBlockCount();    // 获得扇区的总数
-//
-//        long availableBlocks = stat.getAvailableBlocks();   // 获得可用的扇区数量
-//
-//        // 总空间
-//        String totalMemory =  Formatter.formatFileSize(context, totalBlocks * blockSize);
-//        // 可用空间
-//        String availableMemory = Formatter.formatFileSize(context, availableBlocks * blockSize);
-//
-//        return "总空间: " + totalMemory + "\n可用空间: " + availableMemory;
-//    }
+    /**
+     * 根据路径获取内存状态
+     * @param
+     * @return
+     */
+    public static String getMemoryInfo(Context context)
+    {
+
+        File path = Environment.getDataDirectory();
+
+        // 获得一个磁盘状态对象
+
+        StatFs stat = new StatFs(path.getPath());
+
+        long blockSize = stat.getBlockSize();   // 获得一个扇区的大小
+
+        long totalBlocks = stat.getBlockCount();    // 获得扇区的总数
+
+        long availableBlocks = stat.getAvailableBlocks();   // 获得可用的扇区数量
+
+        // 总空间
+        String totalMemory =  Formatter.formatFileSize(context, totalBlocks * blockSize);
+        // 可用空间
+        String availableMemory = Formatter.formatFileSize(context, availableBlocks * blockSize);
+
+        return "总空间: " + totalMemory + "\n可用空间: " + availableMemory;
+    }
 
 
 }

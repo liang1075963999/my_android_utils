@@ -12,6 +12,14 @@
     <ImageView
         android:id="@+id/imageview"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="291dp"
+        android:layout_gravity="top"
         android:src="@drawable/beijngpng"/>
+
+    <Button
+        android:text="保存图片到本地"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"/>
+
 </LinearLayout>

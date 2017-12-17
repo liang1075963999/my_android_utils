@@ -17,6 +17,9 @@
         <activity android:name=".donghua.Second"/>
         <activity android:name=".donghua.ListActivity"/>
         <activity android:name=".tupian.Second"/>
+        <activity android:name=".riqi.Second"/>
+        <activity android:name=".wenjian.Second"/>
+        <activity android:name=".sd_card.Second"/>
     </application>
-
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 </manifest>

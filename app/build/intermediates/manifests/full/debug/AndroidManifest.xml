@@ -8,6 +8,8 @@
         android:minSdkVersion="12"
         android:targetSdkVersion="25" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <meta-data
         android:name="android.support.VERSION"
         android:value="25.3.1" />
@@ -28,6 +30,9 @@
         <activity android:name="com.example.liang.android_utils.donghua.Second" />
         <activity android:name="com.example.liang.android_utils.donghua.ListActivity" />
         <activity android:name="com.example.liang.android_utils.tupian.Second" />
+        <activity android:name="com.example.liang.android_utils.riqi.Second" />
+        <activity android:name="com.example.liang.android_utils.wenjian.Second" />
+        <activity android:name="com.example.liang.android_utils.sd_card.Second" />
     </application>
 
 </manifest>

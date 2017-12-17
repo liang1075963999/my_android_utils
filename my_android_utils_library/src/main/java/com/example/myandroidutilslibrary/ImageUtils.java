@@ -63,8 +63,7 @@ public class ImageUtils {
      *
      * @param photoBitmap
      * @param photoName
-     * @param path
-     * 圆形头像工具类
+     * @param path        圆形头像工具类
      */
     public static String savePhoto(Bitmap photoBitmap, String path,
                                    String photoName) {
@@ -112,8 +111,7 @@ public class ImageUtils {
     /**
      * 转换图片成圆形
      *
-     * @param bitmap
-     *            传入Bitmap对象
+     * @param bitmap 传入Bitmap对象
      * @return
      */
     public static Bitmap toRoundBitmap(Bitmap bitmap) {//如Utils.toRoundBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.heart_on));将resource转为bitmap
@@ -1657,4 +1655,5 @@ public class ImageUtils {
             src.recycle();
         return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
     }
+
 }

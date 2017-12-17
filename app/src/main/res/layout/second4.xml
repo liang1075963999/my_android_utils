@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:text="判断SD卡是否挂载"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button"/>
+            <Button
+                android:text="得到SD卡的 系统根路径"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button1"/>
+            <Button
+                android:text="获取SD卡 系统根路径"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button2"/>
+            <Button
+                android:text="获得SD卡已经使用的大小"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button3"/>
+            <Button
+                android:text="获得sd卡剩余容量，即可用大小"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button4"/>
+            <Button
+                android:text="获得机身内存总大小"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button5"/>
+            <Button
+                android:text="获得机身可用内存"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button6"/>
+            <Button
+                android:text="获取SD卡的剩余容量 单位byte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button7"/>
+            <Button
+                android:text="获取SD卡的根目录  获取到的是 系统默认的存储位置 的卡的路径"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button8"/>
+            <Button
+                android:text="将文件保存到SD卡中"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button9"/>
+            <Button
+                android:text="从SD卡中取出存储的文件"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button10"/>
+            <Button
+                android:text="根据路径获取内存状态"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button11"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

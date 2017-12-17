@@ -42,7 +42,12 @@ public class ConvertUtils {
 
     static final char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
-    /*uri路径转换为绝对路径*/
+    /**
+     * uri路径转换为绝对路径
+     * @param context
+     * @param fileUri uri路径
+     * @return 返回绝对路径
+     */
     public static String getFileAbsolutePath(Activity context, Uri fileUri) {
         if (context == null || fileUri == null)
             return null;

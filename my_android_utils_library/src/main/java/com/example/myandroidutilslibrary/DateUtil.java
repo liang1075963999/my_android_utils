@@ -21,7 +21,7 @@ public class DateUtil {
     }
 
     /**
-     * 获取当前日期
+     * 获取明天的日期
      * @return
      */
     public static String getTomorrowDate() {

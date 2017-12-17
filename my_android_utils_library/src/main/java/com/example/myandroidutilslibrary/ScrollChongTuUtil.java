@@ -10,6 +10,10 @@ import android.widget.ListView;
  */
 
 public class ScrollChongTuUtil {
+    /**
+     * 解决scrollview和listview的滑动冲突
+     * @param listView
+     */
     public static void setListViewHeightBasedOnChildren(ListView listView) {
         // 获取ListView对应的Adapter
         ListAdapter listAdapter = listView.getAdapter();

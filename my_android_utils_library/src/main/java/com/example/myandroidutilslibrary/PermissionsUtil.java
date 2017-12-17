@@ -11,6 +11,11 @@ import android.support.v4.content.ContextCompat;
  */
 
 public class PermissionsUtil {
+    /**
+     * 申请权限
+     * @param context
+     * @param permission 如Manifest.permission.CALL_PHONE
+     */
     public static void applyPermissions(Context context,String permission){//参数permission：Manifest.permission.CALL_PHONE
         if(ContextCompat.checkSelfPermission(context, permission)!= PackageManager.PERMISSION_GRANTED)//checkSelfPermission返回的结果如果是0表示同意，1表示禁止
         {
