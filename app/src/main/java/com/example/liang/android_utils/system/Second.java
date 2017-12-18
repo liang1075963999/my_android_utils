@@ -50,7 +50,7 @@ public class Second extends AppCompatActivity implements View.OnClickListener {
                 Toast.makeText(this, "b2:" + b2, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button3:
-                SystemUtil.copyToClipBoard(Second.this,"保存文字到剪贴了，哈哈哈哈哈");
+                SystemUtil.copyToClipBoard(Second.this,"保存文字到剪贴了，哈哈哈哈哈哈");
                 break;
             default:
                 break;
