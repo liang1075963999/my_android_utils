@@ -20,6 +20,11 @@
         <activity android:name=".riqi.Second"/>
         <activity android:name=".wenjian.Second"/>
         <activity android:name=".sd_card.Second"/>
+        <activity android:name=".string.Second"/>
+        <activity android:name=".system.Second"/>
     </application>
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 </manifest>

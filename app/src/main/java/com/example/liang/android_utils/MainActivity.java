@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button riQi;
     private Button wenJian;
     private Button sd;
+    private Button zhiFuChuan;
+    private Button xiTong;
     private Intent intent;
 
     @Override
@@ -29,11 +31,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         riQi= (Button) findViewById(R.id.button4);
         wenJian= (Button) findViewById(R.id.button5);
         sd= (Button) findViewById(R.id.button6);
+        zhiFuChuan= (Button) findViewById(R.id.button7);
+        xiTong= (Button) findViewById(R.id.button8);
         tuPian.setOnClickListener(this);
         dongHua.setOnClickListener(this);
         riQi.setOnClickListener(this);
         wenJian.setOnClickListener(this);
         sd.setOnClickListener(this);
+        zhiFuChuan.setOnClickListener(this);
+        xiTong.setOnClickListener(this);
     }
 
     @Override
@@ -57,6 +63,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button6:
                 intent=new Intent(MainActivity.this, com.example.liang.android_utils.sd_card.Second.class);
+                startActivity(intent);
+                break;
+            case R.id.button7:
+                intent=new Intent(MainActivity.this, com.example.liang.android_utils.string.Second.class);
+                startActivity(intent);
+                break;
+            case R.id.button8:
+                intent=new Intent(MainActivity.this, com.example.liang.android_utils.system.Second.class);
                 startActivity(intent);
                 break;
             default:

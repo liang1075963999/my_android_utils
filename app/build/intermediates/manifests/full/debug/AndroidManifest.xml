@@ -9,6 +9,8 @@
         android:targetSdkVersion="25" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <meta-data
         android:name="android.support.VERSION"
@@ -33,6 +35,8 @@
         <activity android:name="com.example.liang.android_utils.riqi.Second" />
         <activity android:name="com.example.liang.android_utils.wenjian.Second" />
         <activity android:name="com.example.liang.android_utils.sd_card.Second" />
+        <activity android:name="com.example.liang.android_utils.string.Second" />
+        <activity android:name="com.example.liang.android_utils.system.Second" />
     </application>
 
 </manifest>

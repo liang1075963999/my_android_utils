@@ -269,7 +269,7 @@ public class StringUtils {
      * @param s 单个汉字字符串
      * @return 如果字符串长度是1返回的是对应的ascii码，否则返回-1
      */
-    private static int oneCn2ASCII(String s) {
+    public static int oneCn2ASCII(String s) {
         if (s.length() != 1) return -1;
         int ascii = 0;
         try {
@@ -295,7 +295,7 @@ public class StringUtils {
      * @param s 单个汉字字符串
      * @return 如果字符串长度是1返回的是对应的拼音，否则返回{@code null}
      */
-    private static String oneCn2PY(String s) {
+    public static String oneCn2PY(String s) {
         int ascii = oneCn2ASCII(s);
         if (ascii == -1) return null;
         String ret = null;

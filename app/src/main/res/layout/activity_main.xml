@@ -37,4 +37,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SD卡工具演示"/>
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="字符串工具演示"/>
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="系统工具演示"/>
 </LinearLayout>

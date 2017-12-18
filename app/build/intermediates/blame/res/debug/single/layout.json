@@ -4,6 +4,10 @@
         "source": "F:\\Android_Utils\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_screen_simple.xml"
     },
     {
+        "merged": "F:\\Android_Utils\\app\\build\\intermediates\\res\\merged\\debug\\layout\\second5.xml",
+        "source": "F:\\Android_Utils\\app\\src\\main\\res\\layout\\second5.xml"
+    },
+    {
         "merged": "F:\\Android_Utils\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
         "source": "F:\\Android_Utils\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\select_dialog_item_material.xml"
     },
@@ -24,12 +28,12 @@
         "source": "F:\\Android_Utils\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_screen_content_include.xml"
     },
     {
-        "merged": "F:\\Android_Utils\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
-        "source": "F:\\Android_Utils\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_media.xml"
-    },
-    {
         "merged": "F:\\Android_Utils\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
         "source": "F:\\Android_Utils\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_media_custom.xml"
+    },
+    {
+        "merged": "F:\\Android_Utils\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "F:\\Android_Utils\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_media.xml"
     },
     {
         "merged": "F:\\Android_Utils\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
@@ -182,6 +186,10 @@
     {
         "merged": "F:\\Android_Utils\\app\\build\\intermediates\\res\\merged\\debug\\layout\\second3.xml",
         "source": "F:\\Android_Utils\\app\\src\\main\\res\\layout\\second3.xml"
+    },
+    {
+        "merged": "F:\\Android_Utils\\app\\build\\intermediates\\res\\merged\\debug\\layout\\second6.xml",
+        "source": "F:\\Android_Utils\\app\\src\\main\\res\\layout\\second6.xml"
     },
     {
         "merged": "F:\\Android_Utils\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
