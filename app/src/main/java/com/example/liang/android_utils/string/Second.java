@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.liang.android_utils.R;
-import com.example.myandroidutilslibrary.StringUtils;
+import com.example.myandroidutilslibrary.utils.StringUtils;
 
 /**
  * Created by liang on 2017/12/18.

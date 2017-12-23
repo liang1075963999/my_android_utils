@@ -47,4 +47,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="系统工具演示"/>
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="widget工具演示"/>
 </LinearLayout>

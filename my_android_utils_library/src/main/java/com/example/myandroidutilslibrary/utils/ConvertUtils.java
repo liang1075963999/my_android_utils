@@ -1,4 +1,4 @@
-package com.example.myandroidutilslibrary;
+package com.example.myandroidutilslibrary.utils;
 
 import android.app.Activity;
 import android.content.ContentUris;

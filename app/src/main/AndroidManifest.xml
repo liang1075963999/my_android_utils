@@ -22,6 +22,7 @@
         <activity android:name=".sd_card.Second"/>
         <activity android:name=".string.Second"/>
         <activity android:name=".system.Second"/>
+        <activity android:name=".widget.Second"/>
     </application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>

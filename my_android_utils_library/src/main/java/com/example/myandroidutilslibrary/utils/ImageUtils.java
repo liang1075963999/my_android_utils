@@ -1,4 +1,4 @@
-package com.example.myandroidutilslibrary;
+package com.example.myandroidutilslibrary.utils;
 
 /**
  * Created by Administrator on 2016/11/14.

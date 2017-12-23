@@ -1,4 +1,4 @@
-package com.example.myandroidutilslibrary;
+package com.example.myandroidutilslibrary.utils;
 
 import android.content.Context;
 import android.os.Environment;

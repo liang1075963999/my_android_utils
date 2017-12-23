@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.liang.android_utils.R;
-import com.example.myandroidutilslibrary.ConvertUtils;
-import com.example.myandroidutilslibrary.FileUtils;
+import com.example.myandroidutilslibrary.utils.ConvertUtils;
+import com.example.myandroidutilslibrary.utils.FileUtils;
 
 import java.io.File;
 import java.io.FilenameFilter;

@@ -1,4 +1,4 @@
-package com.example.myandroidutilslibrary;
+package com.example.myandroidutilslibrary.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

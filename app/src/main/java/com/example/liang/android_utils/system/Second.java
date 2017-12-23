@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.liang.android_utils.R;
-import com.example.myandroidutilslibrary.SystemUtil;
+import com.example.myandroidutilslibrary.utils.SystemUtil;
 
 /**
  * Created by liang on 2017/12/18.

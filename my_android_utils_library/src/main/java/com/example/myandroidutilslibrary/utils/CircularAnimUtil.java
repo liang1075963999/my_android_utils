@@ -1,4 +1,4 @@
-package com.example.myandroidutilslibrary;
+package com.example.myandroidutilslibrary.utils;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

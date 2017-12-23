@@ -7,7 +7,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.example.liang.android_utils.R;
-import com.example.myandroidutilslibrary.DateUtil;
+import com.example.myandroidutilslibrary.utils.DateUtil;
 
 /**
  * Created by liang on 2017/12/17.

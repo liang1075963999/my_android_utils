@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import com.example.liang.android_utils.R;
-import com.example.myandroidutilslibrary.CircularAnimUtil;
+import com.example.myandroidutilslibrary.utils.CircularAnimUtil;
 
 /**
  * Created by liang on 2017/12/16.

@@ -37,6 +37,7 @@
         <activity android:name="com.example.liang.android_utils.sd_card.Second" />
         <activity android:name="com.example.liang.android_utils.string.Second" />
         <activity android:name="com.example.liang.android_utils.system.Second" />
+        <activity android:name="com.example.liang.android_utils.widget.Second" />
     </application>
 
 </manifest>

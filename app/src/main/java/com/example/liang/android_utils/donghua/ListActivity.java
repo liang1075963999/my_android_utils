@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.liang.android_utils.R;
-import com.example.myandroidutilslibrary.CircularAnimUtil;
+import com.example.myandroidutilslibrary.utils.CircularAnimUtil;
 
 /**
  * Created on 16/7/20.

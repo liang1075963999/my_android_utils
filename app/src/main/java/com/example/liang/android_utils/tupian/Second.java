@@ -10,8 +10,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.liang.android_utils.R;
-import com.example.myandroidutilslibrary.ImageUtils;
-import com.example.myandroidutilslibrary.SDCardUtils;
+import com.example.myandroidutilslibrary.utils.ImageUtils;
+import com.example.myandroidutilslibrary.utils.SDCardUtils;
 
 /**
  * Created by liang on 2017/12/16.

@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.liang.android_utils.tupian.Second;
-import com.example.myandroidutilslibrary.PermissionsUtil;
+import com.example.myandroidutilslibrary.utils.PermissionsUtil;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button sd;
     private Button zhiFuChuan;
     private Button xiTong;
+    private Button widget;
     private Intent intent;
 
     @Override
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sd= (Button) findViewById(R.id.button6);
         zhiFuChuan= (Button) findViewById(R.id.button7);
         xiTong= (Button) findViewById(R.id.button8);
+        widget= (Button) findViewById(R.id.button9);
         tuPian.setOnClickListener(this);
         dongHua.setOnClickListener(this);
         riQi.setOnClickListener(this);
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sd.setOnClickListener(this);
         zhiFuChuan.setOnClickListener(this);
         xiTong.setOnClickListener(this);
+        widget.setOnClickListener(this);
     }
 
     @Override
@@ -71,6 +74,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button8:
                 intent=new Intent(MainActivity.this, com.example.liang.android_utils.system.Second.class);
+                startActivity(intent);
+                break;
+            case R.id.button9:
+                intent=new Intent(MainActivity.this, com.example.liang.android_utils.widget.Second.class);
                 startActivity(intent);
                 break;
             default:

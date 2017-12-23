@@ -1,4 +1,4 @@
-package com.example.myandroidutilslibrary;
+package com.example.myandroidutilslibrary.utils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
