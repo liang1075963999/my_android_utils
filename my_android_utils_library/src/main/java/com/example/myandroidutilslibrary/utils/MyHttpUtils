@@ -1,0 +1,262 @@
+import android.util.Log;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.Map;
+
+/**
+ * Created by liang on 2018/7/26.
+ */
+
+public class MyHttpUtils{
+    public static String sendPostRequest(String urlPath,
+                                         Map<String, String> params, String encoding) throws Exception {
+        StringBuilder sb = new StringBuilder();
+        // 如果参数不为空
+        if (params != null && !params.isEmpty()) {
+            for (Map.Entry<String, String> entry : params.entrySet()) {
+                // Post方式提交参数的话，不能省略内容类型与长度
+                sb.append(entry.getKey()).append('=').append(
+                        URLEncoder.encode(entry.getValue(), encoding)).append(
+                        '&');
+            }
+            sb.deleteCharAt(sb.length() - 1);
+            Log.i("xinxi", sb.toString());
+        }
+        // 得到实体的二进制数据
+        byte[] entitydata = sb.toString().getBytes();
+        URL url = new URL(urlPath);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("POST");
+        conn.setConnectTimeout(10000);
+        // 如果通过post提交数据，必须设置允许对外输出数据
+        conn.setDoOutput(true);
+        // 这里只设置内容类型与内容长度的头字段
+        conn.setRequestProperty("Content-Type",
+                "application/x-www-form-urlencoded");
+        // conn.setRequestProperty("Content-Type", "text/xml");
+        conn.setRequestProperty("Charset", encoding);
+        conn.setRequestProperty("Content-Length", String
+                .valueOf(entitydata.length));
+        OutputStream outStream = conn.getOutputStream();
+        // 把实体数据写入是输出流
+        outStream.write(entitydata);
+        // 内存中的数据刷入
+        outStream.flush();
+        outStream.close();
+        // 如果请求响应码是200，则表示成功
+        if (conn.getResponseCode() == 200) {
+            // 获得服务器响应的数据
+            BufferedReader in = new BufferedReader(new InputStreamReader(conn
+                    .getInputStream(), encoding));
+            // 数据
+            String retData = null;
+            String responseData = "";
+            while ((retData = in.readLine()) != null) {
+                responseData += retData;
+            }
+            in.close();
+            Log.i("xinxi", "sendPostRequest: " + conn.getHeaderField("Set-Cookie"));
+            return conn.getHeaderField("Set-Cookie");
+        }
+        return "sendText error!";
+    }
+
+    public static InputStream getInputStreamFromUrl(String urlStr, String user) throws MalformedURLException, IOException {//接收图片
+        URL url = new URL(urlStr);
+        HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
+        urlConn.setRequestMethod("POST");
+        urlConn.addRequestProperty("user", user);//在服务端那边是通过request.getHeader("user")来接收的
+        InputStream inputStream = urlConn.getInputStream();
+        return inputStream;
+    }
+
+    public static String postResponse(String urlPath,//发送post请求，并返回页面的输入流
+                                      Map<String, String> params, String encoding) throws Exception {//在服务端那边是通过request.getParameter("save")来接收的
+        StringBuilder sb = new StringBuilder();
+        // 如果参数不为空
+        if (params != null && !params.isEmpty()) {
+            for (Map.Entry<String, String> entry : params.entrySet()) {
+                // Post方式提交参数的话，不能省略内容类型与长度
+                sb.append(entry.getKey()).append('=').append(
+                        URLEncoder.encode(entry.getValue(), encoding)).append(
+                        '&');
+            }
+            sb.deleteCharAt(sb.length() - 1);
+            Log.i("xinxi", sb.toString());
+        }
+        // 得到实体的二进制数据
+        byte[] entitydata = sb.toString().getBytes();
+        URL url = new URL(urlPath);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("POST");
+        conn.setConnectTimeout(10000);
+        // 如果通过post提交数据，必须设置允许对外输出数据
+        conn.setDoOutput(true);
+        // 这里只设置内容类型与内容长度的头字段
+        conn.setRequestProperty("Content-Type",
+                "application/x-www-form-urlencoded");
+        // conn.setRequestProperty("Content-Type", "text/xml");
+        conn.setRequestProperty("Charset", encoding);
+        conn.setRequestProperty("Content-Length", String
+                .valueOf(entitydata.length));
+        OutputStream outStream = conn.getOutputStream();
+        // 把实体数据写入是输出流
+        outStream.write(entitydata);
+        // 内存中的数据刷入
+        outStream.flush();
+        outStream.close();
+        // 如果请求响应码是200，则表示成功
+        if (conn.getResponseCode() == 200) {
+            return ConvertUtils.inputStream2String(conn.getInputStream(), "UTF-8");
+        }
+        return "sendText error!" + "响应回来的信息为：" + conn.getResponseMessage() + ",响应码:" + conn.getResponseCode();
+    }
+
+    /**
+     * Post json string.
+     *
+     * @param urlPath  the url path
+     * @param params   the params
+     * @param encoding the encoding
+     * @return the string
+     * @throws Exception the exception
+     */
+    public static String postJson(String urlPath,//发送json请求，并返回页面的输入流
+                                  String params, String encoding) throws Exception {
+        // 得到实体的二进制数据
+        byte[] entitydata = params.getBytes();
+        URL url = new URL(urlPath);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("POST");
+        conn.setConnectTimeout(10000);
+        // 如果通过post提交数据，必须设置允许对外输出数据
+        conn.setDoOutput(true);
+        // 这里只设置内容类型与内容长度的头字段
+        conn.setRequestProperty("content-Type",
+                "application/json");
+        // conn.setRequestProperty("Content-Type", "text/xml");
+        conn.setRequestProperty("Charset", encoding);
+        conn.setRequestProperty("Content-Length", String
+                .valueOf(entitydata.length));
+        OutputStream outStream = conn.getOutputStream();
+        // 把实体数据写入是输出流
+        outStream.write(entitydata);
+        // 内存中的数据刷入
+        outStream.flush();
+        outStream.close();
+        // 如果请求响应码是200，则表示成功
+        if (conn.getResponseCode() == 200) {
+            return ConvertUtils.inputStream2String(conn.getInputStream(), "UTF-8");
+        }
+        return "sendText error!" + "响应回来的信息为：" + conn.getResponseMessage() + ",响应码:" + conn.getResponseCode();
+    }
+
+    public static String sendFile(String urlPath, String filePath, String newName) throws Exception {//发送未压缩的图片
+        String end = "\r\n";
+        String twoHyphens = "--";
+        String boundary = "*****";
+        URL url = new URL(urlPath);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setDoInput(true);
+        con.setDoOutput(true);
+        con.setUseCaches(false);
+        con.setRequestMethod("POST");
+        con.setRequestProperty("Connection", "Keep-Alive");
+        con.setRequestProperty("Charset", "UTF-8");
+        con.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
+        DataOutputStream ds = new DataOutputStream(con.getOutputStream());
+        ds.writeBytes(twoHyphens + boundary + end);
+        ds.writeBytes("Content-Disposition: form-data; name=\"file1\";filename=\"" + newName + "\"" + end);
+        ds.writeBytes(end);
+        FileInputStream fStream = new FileInputStream(filePath);
+        short bufferSize = 1024;
+        byte[] buffer = new byte[bufferSize];
+        boolean length = true;
+
+        int length1;
+        while ((length1 = fStream.read(buffer)) != -1) {
+            ds.write(buffer, 0, length1);
+        }
+
+        ds.writeBytes(end);
+        ds.writeBytes(twoHyphens + boundary + twoHyphens + end);
+        fStream.close();
+        ds.flush();
+        InputStream is = con.getInputStream();
+        StringBuffer b = new StringBuffer();
+
+        int ch;
+        while ((ch = is.read()) != -1) {
+            b.append((char) ch);
+        }
+
+        ds.close();
+        return b.toString();
+    }
+
+    public static String sendCompressFile(String urlPath, byte[] bytes, String newName) throws Exception {//发送压缩后的图片,一下子就变的非常小了，省流量
+        String end = "\r\n";
+        String twoHyphens = "--";
+        String boundary = "*****";
+        URL url = new URL(urlPath);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setDoInput(true);
+        con.setDoOutput(true);
+        con.setUseCaches(false);
+        con.setRequestMethod("POST");
+        con.setRequestProperty("Connection", "Keep-Alive");
+        con.setRequestProperty("Charset", "UTF-8");
+        con.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
+        DataOutputStream ds = new DataOutputStream(con.getOutputStream());
+        ds.writeBytes(twoHyphens + boundary + end);
+        ds.writeBytes("Content-Disposition: form-data; name=\"file1\";filename=\"" + newName + "\"" + end);
+        ds.writeBytes(end);
+        ds.write(bytes);
+        ds.writeBytes(end);
+        ds.writeBytes(twoHyphens + boundary + twoHyphens + end);
+        ds.flush();
+        InputStream is = con.getInputStream();
+        StringBuffer b = new StringBuffer();
+        int ch;
+        while ((ch = is.read()) != -1) {
+            b.append((char) ch);
+        }
+        ds.close();
+        return b.toString();
+    }
+
+    public static String sendAnyFile(String urlPath, byte[] bytes, String newName) throws Exception {
+        String end = "\r\n";
+        String twoHyphens = "--";
+        String boundary = "*****";
+        URL url = new URL(urlPath);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setDoInput(true);
+        con.setDoOutput(true);
+        con.setUseCaches(false);
+        con.setRequestMethod("POST");
+        con.setRequestProperty("Connection", "Keep-Alive");
+        con.setRequestProperty("Charset", "UTF-8");
+        con.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
+        DataOutputStream ds = new DataOutputStream(con.getOutputStream());
+        ds.writeBytes(twoHyphens + boundary + end);
+        ds.writeBytes("Content-Disposition: form-data; name=\"file1\";filename=\"" + newName + "\"" + end);
+        ds.writeBytes(end);
+        ds.write(bytes);
+        ds.writeBytes(end);
+        ds.writeBytes(twoHyphens + boundary + twoHyphens + end);
+        ds.flush();
+        ds.close();
+        return con.getHeaderField("Set-Cookie");
+    }
+}
