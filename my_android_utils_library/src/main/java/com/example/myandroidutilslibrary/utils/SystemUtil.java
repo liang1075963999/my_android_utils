@@ -53,5 +53,43 @@ public class SystemUtil {
         manager.setPrimaryClip(clipData);
         Toast.makeText(context, "已复制到剪贴板", Toast.LENGTH_SHORT).show();
     }
+    
+        /**
+     * 获取app的版本号
+     *
+     * @param context     the context
+     * @param packageName the package name
+     * @return the version Code
+     * @throws Exception the exception
+     */
+    public static int getVersionCode(Context context, String packageName) throws Exception {
+        PackageManager packageManager = context.getPackageManager();
+        PackageInfo packInfo = packageManager.getPackageInfo(packageName, 0);
+        int version = packInfo.versionCode;
+        return version;
+    }
+
+    /**
+     * 获取手机的imei
+     *
+     * @param context the context
+     * @return the phone imei
+     */
+    public static String getPhoneIMei(Context context) {
+        TelephonyManager telephonyManager = (TelephonyManager) context.getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
+        String imeistring = telephonyManager.getDeviceId();
+        return imeistring;
+    }
+
+    /**
+     * 获取手机的ID
+     *
+     * @param context the context
+     * @return the android id
+     */
+    public static String getAndroidId(Context context) {
+        String ANDROID_ID = Settings.System.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
+        return ANDROID_ID;
+    }
 
 }
