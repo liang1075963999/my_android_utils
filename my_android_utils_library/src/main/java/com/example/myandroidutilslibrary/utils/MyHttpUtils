@@ -142,7 +142,7 @@ public class MyHttpUtils{
         // 如果通过post提交数据，必须设置允许对外输出数据
         conn.setDoOutput(true);
         // 这里只设置内容类型与内容长度的头字段
-        conn.setRequestProperty("content-Type",
+        conn.setRequestProperty("Content-Type",
                 "application/json");
         // conn.setRequestProperty("Content-Type", "text/xml");
         conn.setRequestProperty("Charset", encoding);
