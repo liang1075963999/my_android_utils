@@ -91,5 +91,10 @@ public class SystemUtil {
         String ANDROID_ID = Settings.System.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
         return ANDROID_ID;
     }
-
+      /**
+     * 获取app的包名(是app.gradle中的包名)
+     */
+    static public String getPackageName(Activity a) {
+        return a.getPackageName();
+    }
 }
