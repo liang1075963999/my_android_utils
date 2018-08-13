@@ -31,26 +31,19 @@ public class BarUtil {
 
     public static final int DEFAULT_STATUS_BAR_ALPHA = 112;
 
-    //沉浸式状态栏，使用时记得给父布局设置fitsSystemWindows="true"属性
+     /**
+     * 沉浸式状态栏，使用时记得给父布局设置fitsSystemWindows="true"属性
+     * @param Activity a
+     */
         public static void initTranslucentStatus(Activity a) {
 
         // 4.4 全透明状态栏（有的机子是过渡形式的透明）
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             a.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            // a.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         }
         // 5.0 全透明实现
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            // Window window = a.getWindow();
-            // window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
-            // | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-            // window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-            // | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-            // | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-            // window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            // window.setStatusBarColor(ContextCompat.getColor(a,(R.color.blue)));
             a.getWindow().setStatusBarColor(Color.TRANSPARENT);
-            // window.setNavigationBarColor(Color.TRANSPARENT);
         }
     }
     
