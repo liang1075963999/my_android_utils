@@ -63,7 +63,7 @@ public class ImageUtils {
      *
      * @param photoBitmap
      * @param photoName
-     * @param path        保存图片工具类
+     * @param path        保存图片
      */
     public static String savePhoto(Bitmap photoBitmap, String path,
                                    String photoName) {
